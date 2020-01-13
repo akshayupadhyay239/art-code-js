@@ -1,0 +1,30 @@
+function setup() {
+  createCanvas(500, 500);
+}
+
+var pointx = [];
+var pointy = [];
+var n =0;
+var limit = 10;
+
+function draw() {
+  background("white")
+  translate(250,250)
+  stroke('black')
+  strokeWeight(1)
+  
+  if (n <limit){
+      pointx[n] = random(-250,250);
+      pointy[n] = random(-250,250);
+     }
+  for(let i = 0;i<n;i++)
+  {
+     var  px = pointx[i];
+     var py = pointy[i];
+    for(let z=i+1;z<n;z++)
+    {
+      line(px,py,pointx[z],pointy[z])
+    }
+  }
+  n++;
+}
